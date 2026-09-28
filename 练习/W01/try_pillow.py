@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+"""W1 学习过程脚本：循环版灰度化（本地练习用）。
+
+说明：这个文件最初叫 try_pillow.py，是"读一张图看看"的探路脚本，
+     后来在里面长出了 to_gray / on_white 两个函数。
+     正式交付版见仓库根目录的 grayscale_cli.py（带 CLI、批量处理、错误处理）。
+     本文件保留在此作为"循环版基线"，供 W2 向量化对拍参考。
+
+用法（在仓库根目录跑）:
+    cd ~/cv-kit
+    python 练习/W01/try_pillow.py
+"""
 from PIL import Image
 import os
 

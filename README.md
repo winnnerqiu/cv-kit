@@ -2,6 +2,58 @@
 
 图像处理算法的 Python 复现库。目标是把常用算子手写一遍，并与 OpenCV 的实现做精度和性能对标。
 
+## 目录结构
+
+```
+cv-kit/
+├── README.md
+├── grayscale_cli.py            ★ 主工具：批量灰度化 CLI（W1）
+├── w2_verify.py                  对拍脚本：向量化版 vs 循环版（W2）
+├── testdata/                     测试数据（6 个文件，含 4 个边界情况）
+├── out/                          输出目录（每次可重新生成，不进版本库）
+│
+├── 练习/                         【学习过程】每个文件都能单独运行
+│   ├── W01/
+│   │   ├── try_pillow.py            循环版灰度化（W1 过程版，对拍基线）
+│   │   └── w1_syntax_check.py       Python 语法查漏补缺（列表/字典/字符串）
+│   └── W02/
+│       ├── w2_numpy_intro.py        NumPy 入门探索（交互模式专用）
+│       ├── w2_numpy_quiz.py         小测：11 道预测题
+│       ├── w2_img2array.py          图片 ⇄ 数组，亲眼看"高宽反转"的坑
+│       ├── w2_ndim_practice.py      三维索引专项练习（6 个实验 + 存图验证）
+│       └── w2_to_gray_numpy.py      ★ 向量化灰度化（W2 练习参考答案区）
+│
+└── 学习资料/                     【笔记与手册】不是代码
+    ├── 00-总目录.md                  24 周进度总表
+    ├── 00-踩坑记录-网络与Git.md
+    ├── W01/
+    │   ├── 学习概述.md                本周做了什么、学到什么、数据基线
+    │   └── 01-Python基础-W1.md        Python 零基础手册（查表用）
+    └── W02/
+        ├── 学习概述.md                本周目标、任务包、验收清单
+        └── 专题-三维数组索引.md         塌陷规律 + 自测题
+```
+
+### 怎么跑
+
+主工具（在仓库根目录跑）：
+
+```bash
+python grayscale_cli.py testdata out
+```
+
+练习脚本（也在根目录跑，用相对路径指到子目录）：
+
+```bash
+python 练习/W02/w2_numpy_quiz.py         # 例如：跑 W2 的小测
+```
+
+对拍脚本（必须在根目录，因为它要导入其他模块）：
+
+```bash
+python w2_verify.py
+```
+
 ## 环境
 
 - Python 3.11（conda 环境 `vision`）

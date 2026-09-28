@@ -4,3 +4,5 @@ out/
 # Python 自动生成的缓存
 __pycache__/
 *.pyc
+# 工具运行残留（nvidia-smi 等会在当前目录建这个）
+NVIDIA Corporation/
