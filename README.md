@@ -16,12 +16,18 @@ cv-kit/
 │   ├── W01/
 │   │   ├── try_pillow.py            循环版灰度化（W1 过程版，对拍基线）
 │   │   └── w1_syntax_check.py       Python 语法查漏补缺（列表/字典/字符串）
-│   └── W02/
-│       ├── w2_numpy_intro.py        NumPy 入门探索（交互模式专用）
-│       ├── w2_numpy_quiz.py         小测：11 道预测题
-│       ├── w2_img2array.py          图片 ⇄ 数组，亲眼看"高宽反转"的坑
-│       ├── w2_ndim_practice.py      三维索引专项练习（6 个实验 + 存图验证）
-│       └── w2_to_gray_numpy.py      ★ 向量化灰度化（W2 练习参考答案区）
+│   ├── W02/
+│   │   ├── w2_numpy_intro.py        NumPy 入门探索（交互模式专用）
+│   │   ├── w2_numpy_quiz.py         小测：11 道预测题
+│   │   ├── w2_img2array.py          图片 ⇄ 数组，亲眼看"高宽反转"的坑
+│   │   ├── w2_ndim_practice.py      三维索引专项练习（6 个实验 + 存图验证）
+│   │   └── w2_to_gray_numpy.py      ★ 向量化灰度化（W2 练习参考答案区）
+│   └── W03/
+│       ├── w3_metrics.py            ★ 评估工具：PSNR / SSIM / 对拍判定（不用填）
+│       ├── w3_conv.py               卷积：滑窗 + im2col（TODO 2 处）
+│       ├── w3_filters.py            均值 / 高斯 / 中值（TODO 3 处）
+│       ├── w3_histogram.py          直方图均衡 + CLAHE（参考实现，配 4 个思考题）
+│       └── w3_compare.py            一键对标：出三联图 + Markdown 报告
 │
 └── 学习资料/                     【笔记与手册】不是代码
     ├── 00-总目录.md                  24 周进度总表
@@ -29,9 +35,13 @@ cv-kit/
     ├── W01/
     │   ├── 学习概述.md                本周做了什么、学到什么、数据基线
     │   └── 01-Python基础-W1.md        Python 零基础手册（查表用）
-    └── W02/
-        ├── 学习概述.md                本周目标、任务包、验收清单
-        └── 专题-三维数组索引.md         塌陷规律 + 自测题
+    ├── W02/
+    │   ├── 学习概述.md                本周目标、任务包、验收清单
+    │   └── 专题-三维数组索引.md         塌陷规律 + 自测题
+    └── W03/
+        ├── 学习概述.md                四个任务包 + 验收清单 + 坑预警
+        ├── 专题-im2col与滑窗.md        卷积向量化的两条路线
+        └── 对标报告.md                ★ W3 核心产出（模板，手填）
 ```
 
 ### 怎么跑
@@ -52,6 +62,16 @@ python 练习/W02/w2_numpy_quiz.py         # 例如：跑 W2 的小测
 
 ```bash
 python w2_verify.py
+```
+
+W3 的算子练习与一键对标：
+
+```bash
+python 练习/W03/w3_metrics.py      # 先自检评估工具
+python 练习/W03/w3_conv.py         # 卷积（填完 TODO 后跑）
+python 练习/W03/w3_filters.py      # 三种滤波
+python 练习/W03/w3_histogram.py    # HE + CLAHE
+python 练习/W03/w3_compare.py      # 全量对标 → out/w3/
 ```
 
 ## 环境
